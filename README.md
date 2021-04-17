@@ -16,5 +16,9 @@ Senior Software Engineer at XM
 =======
 # posts-rest-api
 
+<<<<<<< HEAD
 Written for an article
 >>>>>>> 7969bb3 (first commit)
+=======
+Sample Golang REST API written for an [article](https://dev.to/lucasnevespereira/write-a-rest-api-in-golang-following-best-practices-pe9)
+>>>>>>> 783148c (updated README)
