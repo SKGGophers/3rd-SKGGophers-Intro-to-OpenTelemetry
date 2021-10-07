@@ -1,6 +1,7 @@
 package database
 
 import (
+	"context"
 	"log"
 	"postapi/app/models"
 
@@ -11,8 +12,8 @@ import (
 type PostDB interface {
 	Open() error
 	Close() error
-	CreatePost(p *models.Post) error
-	GetPosts() ([]*models.Post, error)
+	CreatePost(ctx context.Context, p *models.Post) error
+	GetPosts(ctx context.Context) ([]*models.Post, error)
 }
 
 type DB struct {

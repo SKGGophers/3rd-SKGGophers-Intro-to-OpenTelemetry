@@ -4,7 +4,7 @@ import "fmt"
 
 var (
 	dbUsername = "postgres"
-	dbPassword = "postgres"
+	dbPassword = "yolo123"
 	dbHost     = "localhost"
 	dbTable    = "postgres"
 	dbPort     = "5432"

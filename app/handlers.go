@@ -32,7 +32,7 @@ func (a *App) CreatePostHandler() http.HandlerFunc {
 		}
 
 		// Save in DB
-		err = a.DB.CreatePost(p)
+		err = a.DB.CreatePost(r.Context(), p)
 		if err != nil {
 			log.Printf("Cannot save post in DB. err=%v \n", err)
 			sendResponse(w, r, nil, http.StatusInternalServerError)
@@ -47,7 +47,7 @@ func (a *App) CreatePostHandler() http.HandlerFunc {
 
 func (a *App) GetPostsHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		posts, err := a.DB.GetPosts()
+		posts, err := a.DB.GetPosts(r.Context())
 		if err != nil {
 			log.Printf("Cannot get posts, err=%v \n", err)
 			sendResponse(w, r, nil, http.StatusInternalServerError)
@@ -60,5 +60,11 @@ func (a *App) GetPostsHandler() http.HandlerFunc {
 		}
 
 		sendResponse(w, r, resp, http.StatusOK)
+	}
+}
+
+func (a *App) Health() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Super Healthy 💪"))
 	}
 }
