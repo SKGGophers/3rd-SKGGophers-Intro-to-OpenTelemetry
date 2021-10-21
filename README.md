@@ -12,3 +12,7 @@ Is OpenTelemetry the future of instrumentation? In this talk, Thanos is going to
 About:  
 Athanasios Irodotou (https://www.linkedin.com/in/athanasios-irodotou-99577136/)
 Senior Software Engineer at XM
+
+---
+The Rest API used for the example is from Lucas Neves Pereira ([@lucasnevespereira](https://github.com/lucasnevespereira))   
+The original Rest API can be found [here](https://github.com/lucasnevespereira/posts-rest-api)
