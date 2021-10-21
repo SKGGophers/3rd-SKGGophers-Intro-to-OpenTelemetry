@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  otl-collector:
+    build:
+      context: .
+      dockerfile: docker/otl-collector/Dockerfile
+    command: [
+      "--config=/etc/otel/config.yaml"
+    ]
+    ports:
+      - "4317:4317"
+    volumes:
+      - ./docker/otl-collector/config.yml:/etc/otel-collector-config.yml
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+
+  postgres:
+    image: postgres
+    environment:
+      - "POSTGRES_PASSWORD=yolo123"
+    ports:
+      - "5432:5432"
+
+volumes:
+  config:
